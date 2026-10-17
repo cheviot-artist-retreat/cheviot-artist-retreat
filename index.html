@@ -450,6 +450,34 @@
             color: #ffffff;
         }
 
+        /* Location Section Styles */
+        .location-section {
+            background: var(--accent-soft);
+            padding: 5rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 6rem;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .location-info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-info-item i {
+            color: var(--brand-ochre);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
         footer {
             border-top: 1px solid var(--border-subtle);
             padding: 3rem 0;
@@ -459,7 +487,7 @@
         }
 
         @media (max-width: 960px) {
-            .hero-grid, .ethos-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero-grid, .ethos-grid, .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .studio-cards-grid { grid-template-columns: repeat(2, 1fr); }
             .hero h1 { font-size: 2.5rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -488,7 +516,8 @@
             <nav>
                 <ul>
                     <li><a href="#about">The Retreat</a></li>
-                    <li><a href="#studios">Studios</a></li>
+                    <li><a href="#studios">Facilities</a></li>
+                    <li><a href="#location">Location</a></li>
                     <li><a href="#apply" class="btn btn-primary">Apply Now</a></li>
                 </ul>
             </nav>
@@ -499,20 +528,20 @@
         <div class="container hero-grid">
             <div class="hero-text-block">
                 <div class="hero-tag">
-                    <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> Creative Sanctuary
+                    <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> Artist-Led Initiative
                 </div>
-                <h1>Immerse Your Craft in Northumberland</h1>
-                <p>A premium residency program tailored for fine artists, writers, and makers looking to escape inside the breathtaking heritage landscape of the historic Ford & Etal Estate.</p>
+                <h1>Space to Gather, Room to Respond</h1>
+                <p>Nestled in the countryside on the Ford & Etal Estate, Cheviot Glamping and its sibling craft microbrewery, Cheviot Brewery (anchored by the onsite Cheviot Tap bar), form a unique rural destination rooted in local craftsmanship.</p>
                 <div class="hero-actions">
-                    <a href="#apply" class="btn btn-primary">Book Your Residency</a>
-                    <a href="#studios" class="btn btn-outline">Explore Spaces</a>
+                    <a href="#apply" class="btn btn-primary">Apply for February</a>
+                    <a href="#about" class="btn btn-outline">Explore Ethos</a>
                 </div>
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="inside.jpg.webp" alt="Cheviot Artist Retreat Indoor Workspace">
+                <img src="inside.jpg.webp" alt="Cheviot Artist Retreat Workspace">
                 <div class="hero-image-badge">
-                    <span>The Outdoor Pergola Workspace</span>
+                    <span>Cheviot Tap & Estate Surroundings</span>
                     <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
                 </div>
             </div>
@@ -522,20 +551,20 @@
     <section class="stats-bar">
         <div class="container stats-grid">
             <div class="stat-item">
-                <h3>12</h3>
-                <p>Private Studios</p>
+                <h3>Feb 2027</h3>
+                <p>Next Residency</p>
             </div>
             <div class="stat-item">
-                <h3>6,000</h3>
-                <p>Acres of Estate</p>
+                <h3>Custom</h3>
+                <p>Studio Units</p>
             </div>
             <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Studio Access</p>
+                <h3>Single</h3>
+                <p>Accommodation Pods</p>
             </div>
             <div class="stat-item">
-                <h3>100%</h3>
-                <p>Creative Focus</p>
+                <h3>Brewery</h3>
+                <p>& Tap Onsite</p>
             </div>
         </div>
     </section>
@@ -543,111 +572,135 @@
     <main class="container">
         <div id="about" class="section-header">
             <span>Our Ethos</span>
-            <h2>Space to Breathe, Time to Create</h2>
-            <p>Nestled beneath the dramatic Cheviot Hills, our retreat offers uninterrupted time to refine your artistic practice surrounded by rolling fields, ancient castles, and working craft [...]
+            <h2>Rooted in Craftsmanship & Landscape</h2>
+            <p>Surrounded by woodland and rolling hills, it blends a rustic, community-focused atmosphere with a deep connection to the regional landscape.</p>
         </div>
 
         <section class="ethos-grid">
             <div class="ethos-content">
-                <h3>An Inspiring Heritage Landscape</h3>
-                <p>Artists-in-residence live and work within the meticulously preserved buildings of Ford and Etal. Walk history-rich paths, find solace along the River Till, and translate the ti[...]
-                <p>Whether you're sketching architecture, writing historical fiction, or using local materials for woodwork and ceramics, the estate acts as both an engine and canvas for your out[...]
+                <h3>An Immersive Environment for Creatives</h3>
+                <p>Cheviot Artist Retreat is an artist-led initiative born from months of immersive time spent responding to the inspiring landscape surrounding the Scottish Borders.</p>
+                <p>Founded in collaboration with the owners of Cheviot Glamping, our program harnesses this remarkable environment to offer fellow creatives space to gather inspiration and develop their work. We provide dedicated custom units as studio spaces alongside single pods for resident accommodation.</p>
+                <p>Committed to meaningful community connection, we host open studios and local exhibition opportunities that bridge visiting artists with the wider creative community in the region.</p>
             </div>
             <div class="hero-image-wrapper">
-                <img src="courtyard.jpg.webp" alt="Scenic views of the surrounding Cheviot Hills landscape">
+                <img src="courtyard.jpg.webp" alt="Scenic courtyard and surrounding Cheviot landscape">
             </div>
         </section>
 
         <section id="studios" class="studios-section">
             <div class="section-header">
-                <span>Residency Workspaces</span>
-                <h2>Find Your Perfect Environment</h2>
-                <p>Every artist is paired with an independent studio layout designed around light routing, equipment safety, and creative isolation requirements.</p>
+                <span>Facilities & Accommodation</span>
+                <h2>Spaces Built from the Estate</h2>
+                <p>The site features bespoke glamping units, upcycled shipping containers, and communal spaces built using materials sourced directly from the surrounding estate.</p>
             </div>
 
             <div class="studio-cards-grid">
                 <div class="studio-card">
                     <div class="studio-card-img-box">
-                        <img src="inside.jpg.webp" alt="North Light Painting Studio Workspace">
+                        <img src="inside.jpg.webp" alt="Dedicated custom studio units">
                     </div>
                     <div class="studio-card-body">
-                        <h4>The North Light Studio</h4>
-                        <p>Optimised with large, vaulted ceilings and premium northern glass arrays for reliable canvas color rendering throughout daylight hours.</p>
+                        <h4>Custom Studio Units</h4>
+                        <p>Dedicated creative workspaces tailored for visual artists, makers, and writers seeking focused time surrounded by nature.</p>
                         <div class="studio-meta">
-                            <span>Fine Art</span> &bull; <span>65 m²</span>
+                            <span>Workspaces</span> &bull; <span>Upcycled Build</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="studio-card">
                     <div class="studio-card-img-box">
-                        <img src="pods.jpg.webp" alt="Heavy Craft Forge and Clay Kiln Room">
+                        <img src="pods.jpg.webp" alt="Single accommodation pods">
                     </div>
                     <div class="studio-card-body">
-                        <h4>The Mill Forge</h4>
-                        <p>Outfitted for sculpting, pottery wheels, high-fire kilns, and structural wood manufacturing layouts needing dedicated extraction units.</p>
+                        <h4>Single Accommodation Pods</h4>
+                        <p>Comfortable individual pods designed for resident accommodation right on site, steps away from your studio door.</p>
                         <div class="studio-meta">
-                            <span>Sculpture & Ceramics</span> &bull; <span>90 m²</span>
+                            <span>Accommodation</span> &bull; <span>Private Pods</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="studio-card">
                     <div class="studio-card-img-box">
-                        <img src="No1OldDogHouse.jpg.webp" alt="Quiet writing desk loft with bookshelves">
+                        <img src="No1OldDogHouse.jpg.webp" alt="Cheviot Tap and Brewery community hub">
                     </div>
                     <div class="studio-card-body">
-                        <h4>The Castle Loft</h4>
-                        <p>A quiet, wood-panelled hideaway containing custom library desks, typing alcoves, and panoramic views of Etal Castle ruins.</p>
+                        <h4>Cheviot Tap & Brewery Hub</h4>
+                        <p>Enjoy the community atmosphere anchored by Cheviot Brewery and the onsite Cheviot Tap bar, fostering open artistic dialogue.</p>
                         <div class="studio-meta">
-                            <span>Writing & Audio</span> &bull; <span>40 m²</span>
+                            <span>Community</span> &bull; <span>Microbrewery</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
+    <section id="location" class="location-section">
+        <div class="container location-grid">
+            <div>
+                <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--brand-ochre); display: block; margin-bottom: 0.5rem;">Directions</span>
+                <h2 style="font-size: 2.25rem; margin-bottom: 1rem;">Location & Access</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                    To reach Cheviot Brewery, Cheviot Tap and Cheviot Glamping by car, it is located on the historic Ford & Etal Estate in north Northumberland, close to the Scottish Border.
+                </p>
+
+                <div class="location-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Slainsfield (near Cornhill-on-Tweed, TD12 4TP), Ford & Etal Estate, north Northumberland</p>
+                    </div>
+                </div>
+
+                <div class="location-info-item">
+                    <i data-lucide="navigation"></i>
+                    <div>
+                        <strong>Surrounding Area</strong>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Set amidst woodland and rolling hills near the Scottish Borders, offering a rich rustic and community-focused atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="hero-image-wrapper">
+                    <img src="courtyard.jpg.webp" alt="Ford and Etal Estate landscape" style="height: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
         <section id="apply" class="apply-section">
-            <h2>Apply For A Cohort Placement</h2>
-            <p class="subheader-p">Residencies range from 2 to 12 weeks. Submissions are reviewed quarterly by our estate arts advisory panel.</p>
+            <h2>Apply For February Residency</h2>
+            <p class="subheader-p">Applicants are required to submit a current CV, up to 10 examples of recent work, and a brief statement outlining their proposed plans and creative goals for the February residency.</p>
             
             <form class="form-grid" onsubmit="event.preventDefault(); alert('Application submitted successfully!');">
                 <div>
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" required placeholder="E.g., Jane">
+                    <label for="fname">Full Name</label>
+                    <input type="text" id="fname" required placeholder="E.g., Jane Smith">
                 </div>
                 <div>
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" required placeholder="E.g., Smith">
-                </div>
-                <div class="form-group-full">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" required placeholder="you@example.com">
                 </div>
-                <div>
-                    <label for="discipline">Primary Medium</label>
-                    <select id="discipline">
-                        <option value="painting">Painting & Drawing</option>
-                        <option value="sculpture">Sculpture & Ceramics</option>
-                        <option value="writing">Creative Writing & Poetry</option>
-                        <option value="other">Multidisciplinary Craft</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="duration">Desired Duration</label>
-                    <select id="duration">
-                        <option value="2w">2 Weeks (Brief Term)</option>
-                        <option value="4w">4 Weeks (Standard Cohort)</option>
-                        <option value="12w">12 Weeks (Full Season Term)</option>
-                    </select>
+                <div class="form-group-full">
+                    <label for="cv">Current CV Link (PDF or Document)</label>
+                    <input type="url" id="cv" required placeholder="https://link-to-your-cv.com">
                 </div>
                 <div class="form-group-full">
-                    <label for="proposal">Residency Project Proposal</label>
-                    <textarea id="proposal" rows="5" required placeholder="Describe the creative work you plan to explore during your time on the Ford & Etal Estate..."></textarea>
+                    <label for="portfolio">Portfolio Link (Up to 10 Examples)</label>
+                    <input type="url" id="portfolio" required placeholder="https://your-portfolio-website.com">
+                </div>
+                <div class="form-group-full">
+                    <label for="proposal">Creative Proposal & Goals (February Session)</label>
+                    <textarea id="proposal" rows="5" required placeholder="Outline your proposed plans and creative goals for the February residency..."></textarea>
                 </div>
                 <div class="form-group-full" style="text-align: center; margin-top: 1rem;">
                     <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem; background: var(--brand-ochre); color: var(--bg-dark); border-radius: 4px; border: none; font-weight: 700;">
-                        Submit Cohort Application
+                        Submit Application
                     </button>
                 </div>
             </form>
@@ -657,7 +710,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Cheviot Artist Retreat at Ford & Etal Estate. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Preserving rural craft heritage across Northumberland.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Slainsfield, near Cornhill-on-Tweed, TD12 4TP.</p>
         </div>
     </footer>
 
