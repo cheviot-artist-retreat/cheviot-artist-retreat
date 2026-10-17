@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheviot Artist Retreat | Ford & Etal Estate</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-canvas: #f6f5f2;
+            --bg-card: #ffffff;
+            --bg-dark: #1e2522;
+            --text-main: #2b302c;
+            --text-muted: #626963;
+            --text-light: #f6f5f2;
+            --brand-pine: #2e4036;
+            --brand-pine-hover: #223129;
+            --brand-ochre: #c88a4c;
+            --brand-heather: #786470;
+            --border-subtle: #e2dfd7;
+            --accent-soft: #eae7df;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: var(--font-heading);
+            letter-spacing: 0.02em;
+            color: var(--brand-pine);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header / Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(246, 245, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--brand-pine);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--brand-pine);
+            color: var(--bg-canvas);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brand-ochre);
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--brand-ochre);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--brand-pine);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-pine-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--brand-pine);
+            color: var(--brand-pine);
+        }
+
+        .btn-outline:hover {
+            background: var(--brand-pine);
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 5rem;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--border-subtle);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand-pine);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-image-badge {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            background: rgba(30, 37, 34, 0.88);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--brand-pine);
+            color: #ffffff;
+            padding: 2.5rem 0;
+            margin-bottom: 5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            color: var(--brand-ochre);
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brand-ochre);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Narrative & Ethos */
+        .ethos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .ethos-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .ethos-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .ethos-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .ethos-card {
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .ethos-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ethos-card-caption {
+            padding: 0.85rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand-pine);
+            text-align: center;
+            background: var(--bg-card);
+        }
+
+        /* Facilities Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-soft);
+            color: var(--brand-pine);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Landscape Spotlight */
+        .landscape-section {
+            background: var(--accent-soft);
+            padding: 5rem 0;
+            margin-bottom: 6rem;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .landscape-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .landscape-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 320px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .landscape-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .landscape-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .landscape-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: #ffffff;
+        }
+
+        .landscape-overlay h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        /* Application Criteria Banner */
+        .apply-banner {
+            background: var(--brand-pine);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .apply-banner h2 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .apply-banner p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .requirements-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .requirements-list i {
+            color: var(--brand-ochre);
+        }
+
+        /* Modal Application Form */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--brand-pine);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--bg-canvas);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        /* Location Section */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .location-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .location-info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-info-item i {
+            color: var(--brand-ochre);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--brand-ochre);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-grid, .ethos-grid, .location-grid, .apply-banner {
+                grid-template-columns: 1fr;
+            }
+            .features-grid, .landscape-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid, .landscape-grid, .ethos-gallery {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Mobile menu can be expanded */
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i data-lucide="trees"></i></div>
+                <div class="logo-text">
+                    <span class="logo-title">Cheviot Artist Retreat</span>
+                    <span class="logo-subtitle">Ford & Etal Estate</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#retreat">Retreat & Tap</a></li>
+                    <li><a href="#landscape">Landscape</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn-primary" onclick="openModal()">Apply for February</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="hero-tag">
+                        <i data-lucide="compass" size="14"></i> Artist-Led Initiative
+                    </div>
+                    <h1>Space to Gather, Room to Respond</h1>
+                    <p>
+                        A creative sanctuary nestled on the historic Ford & Etal Estate in north Northumberland. Born from months of immersive time responding to the surrounding landscape, offering fellow creatives space to gather inspiration and develop their practice.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="openModal()">
+                            Submit Application <i data-lucide="arrow-right" size="16"></i>
+                        </button>
+                        <a href="#about" class="btn btn-outline">Explore Ethos</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="3e02d42b-0077-466a-9949-e77106c80054.jpg" alt="Cheviot Tap Outdoor Pergola with fairy lights at dusk">
+                    <div class="hero-image-badge">
+                        <div>
+                            <strong style="display:block; font-size: 0.95rem;">Cheviot Tap & Courtyard</strong>
+                            <span style="font-size: 0.8rem; opacity: 0.85;">Crafted from estate-sourced timber</span>
+                        </div>
+                        <i data-lucide="sparkles" style="color: var(--brand-ochre);"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>Feb 2027</h3>
+                    <p>Next Residency</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Dedicated</h3>
+                    <p>Studio Units</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Single</h3>
+                    <p>Pod Accommodation</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Border</h3>
+                    <p>Country Region</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Ethos Section -->
+        <section id="about" class="container ethos-grid">
+            <div class="ethos-content">
+                <div style="color: var(--brand-ochre); font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em; margin-bottom:0.5rem;">
+                    Rooted in Craftsmanship
+                </div>
+                <h3>An Artist-Led Collaboration with Cheviot Glamping & Brewery</h3>
+                <p>
+                    Cheviot Artist Retreat is born from an intimate, responsive relationship with the surrounding Scottish Borders and Northumberland terrain. Founded in close collaboration with the team behind Cheviot Glamping, our residency program provides immersive environment for visual artists, makers, and writers.
+                </p>
+                <p>
+                    Anchored alongside Cheviot Brewery and the onsite Cheviot Tap bar, the site is a warm hub built using materials sourced directly from the surrounding Ford & Etal Estate.
+                </p>
+            </div>
+            <div class="ethos-gallery">
+                <div class="ethos-card">
+                    <img src="3e02d42b-0077-466a-9949-e77106c80054.jpg" alt="Cheviot Tap interior lounge with timber crates">
+                    <div class="ethos-card-caption">Cheviot Tap Lounge</div>
+                </div>
+                <div class="ethos-card">
+                    <img src="4b3b65d4-ba09-4216-8632-d5da375cde70.jpg" alt="Snowy courtyard and pine woodland border">
+                    <div class="ethos-card-caption">Winter Landscape & Pine Woods</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio & Accommodation Facilities -->
+        <section id="retreat" class="container">
+            <div class="section-header">
+                <span>Space & Amenities</span>
+                <h2>Purpose-Built Creative Facilities</h2>
+                <p>Designed to give artists total focus, comfortable independent living, and access to a vibrant local community.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="box"></i></div>
+                    <h3>Bespoke Studio Units</h3>
+                    <p>Upcycled shipping containers and custom timber structures converted into well-lit, private creative studio spaces.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="home"></i></div>
+                    <h3>Single Pod Accommodation</h3>
+                    <p>Cozy, fully insulated individual glamping pods nestled against pine woodlands for restful, uninterrupted sleep.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="beer"></i></div>
+                    <h3>Cheviot Tap & Community</h3>
+                    <p>Gathering space anchored by Cheviot Brewery, fostering open artistic dialogue, community open studios, and local exhibitions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landscape Gallery -->
+        <section id="landscape" class="landscape-section">
+            <div class="container">
+                <div class="section-header">
+                    <span>Inspiration</span>
+                    <h2>Responding to the Cheviot Hills</h2>
+                    <p>Immerse yourself in rolling heather moorlands, ancient pine woods, and river valleys across the Scottish Borderland.</p>
+                </div>
+
+                <div class="landscape-grid">
+                    <div class="landscape-item">
+                        <img src="No1_OldDogHouse_01.jpg" alt="Bespoke timber studio unit courtyard with fire pit">
+                        <div class="landscape-overlay">
+                            <h4>Studio Courtyard & Fire Pit</h4>
+                        </div>
+                    </div>
+                    <div class="landscape-item">
+                        <img src="a56d2200-1737-4c39-8c7c-b44b56fd64b0.jpg" alt="Cheviot Glamping site pergola with evening lights">
+                        <div class="landscape-overlay">
+                            <h4>Estate Woodland Settings</h4>
+                        </div>
+                    </div>
+                    <div class="landscape-item">
+                        <img src="4b3b65d4-ba09-4216-8632-d5da375cde70.jpg" alt="Snow covered glamping grounds and timber fences">
+                        <div class="landscape-overlay">
+                            <h4>Winter Light & Atmosphere</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Banner -->
+        <section class="container">
+            <div class="apply-banner">
+                <div>
+                    <h2>Apply for the February Residency</h2>
+                    <p>We invite applications from visual artists, designers, printmakers, and creative practitioners seeking dedicated space in February.</p>
+                    <button class="btn" style="background: var(--brand-ochre); color:#ffffff;" onclick="openModal()">
+                        Open Application Form <i data-lucide="arrow-right" size="16"></i>
+                    </button>
+                </div>
+                <div>
+                    <h4 style="color:#ffffff; margin-bottom: 1rem; font-size:1.1rem;">Application Checklist:</h4>
+                    <ul class="requirements-list">
+                        <li><i data-lucide="check-circle" size="18"></i> Current CV (PDF / link)</li>
+                        <li><i data-lucide="check-circle" size="18"></i> Up to 10 portfolio examples of recent work</li>
+                        <li><i data-lucide="check-circle" size="18"></i> Brief proposal statement for the February session</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="container location-grid">
+            <div>
+                <div style="color: var(--brand-ochre); font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em; margin-bottom:0.5rem;">
+                    Find Us
+                </div>
+                <h2 style="font-size:2.2rem; margin-bottom:1.25rem;">North Northumberland & The Scottish Border</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                    Located within the Ford & Etal Estate, close to Cornhill-on-Tweed and Berwick-upon-Tweed.
+                </p>
+
+                <div class="location-info-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Slainsfield (near Cornhill-on-Tweed), Ford & Etal Estate, TD12 4TP</p>
+                    </div>
+                </div>
+
+                <div class="location-info-item">
+                    <i data-lucide="navigation"></i>
+                    <div>
+                        <strong>Transport & Access</strong>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Easily reached by car via the A697, or train to Berwick-upon-Tweed with local connection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <h3 style="margin-bottom:1rem; font-size:1.3rem;">Cheviot Tap & Brewery</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    Resident artists enjoy full access to the Cheviot Tap grounds, fireside seating, and estate trail walks right outside their studio door.
+                </p>
+                <img src="3e02d42b-0077-466a-9949-e77106c80054.jpg" alt="Cheviot Tap cosy seating area" style="width:100%; border-radius:6px; height:220px; object-fit:cover;">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Cheviot Artist Retreat</h3>
+                    <p style="font-size: 0.9rem; max-width: 320px;">
+                        An artist-led initiative in partnership with Cheviot Glamping on the Ford & Etal Estate.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">About Ethos</a></li>
+                        <li><a href="#retreat">Studios & Pods</a></li>
+                        <li><a href="#landscape">Landscape</a></li>
+                        <li><a href="#location">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Cheviot Family</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Cheviot Glamping</a></li>
+                        <li><a href="#" target="_blank">Cheviot Brewery</a></li>
+                        <li><a href="#" target="_blank">Ford & Etal Estate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cheviot Artist Retreat. All rights reserved.</p>
+                <p>Slainsfield, TD12 4TP</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Modal -->
+    <div class="modal" id="appModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i data-lucide="x" size="24"></i></button>
+            <h3 style="font-size:1.6rem; margin-bottom:0.5rem;">February Residency Application</h3>
+            <p style="color: var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+                Please complete the form below. Have your CV, portfolio link (up to 10 works), and proposal statement ready.
+            </p>
+
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="e.g. Hayley McCrirrick">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Portfolio / Website Link (Up to 10 Examples)</label>
+                    <input type="url" required placeholder="https://">
+                </div>
+                <div class="form-group">
+                    <label>CV Link or Summary</label>
+                    <input type="text" required placeholder="Link to CV PDF or summary text">
+                </div>
+                <div class="form-group">
+                    <label>Creative Proposal Statement (February Session)</label>
+                    <textarea required placeholder="Outline your proposed plans, practice, and creative goals..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.9rem;">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Modal Functions
+        function openModal() {
+            document.getElementById('appModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('appModal').classList.remove('active');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your application for the Cheviot Artist Retreat February session has been received.');
+            closeModal();
+        }
+    </script>
+</body>
+</html>
