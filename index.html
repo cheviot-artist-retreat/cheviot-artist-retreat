@@ -677,32 +677,29 @@
             <h2>Apply For February Residency</h2>
            <p class="subheader-p">Please email submit a current CV, up to 10 examples of recent work, and a brief statement outlining their proposed plans and creative goals for the February residency.</p>plans and creative goals for the February residency.</p>
             
-            <form class="form-grid" onsubmit="event.preventDefault(); alert('Application submitted successfully!');">
-                <div>
-                    <label for="fname">Full Name</label>
-                    <input type="text" id="fname" required placeholder="E.g., Jane Smith">
-                </div>
-                <div>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required placeholder="you@example.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="cv">Current CV Link (PDF or Document)</label>
-                    <input type="url" id="cv" required placeholder="https://link-to-your-cv.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="portfolio">Portfolio Link (Up to 10 Examples)</label>
-                    <input type="url" id="portfolio" required placeholder="https://your-portfolio-website.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="proposal">Creative Proposal & Goals (February Session)</label>
-                    <textarea id="proposal" rows="5" required placeholder="Outline your proposed plans and creative goals for the February residency..."></textarea>
-                </div>
-                <div class="form-group-full" style="text-align: center; margin-top: 1rem;">
-                    <button type="submit" class="btn btn-primary" style="padding: 1rem 3rem; background: var(--brand-ochre); color: var(--bg-dark); border-radius: 4px; border: none; font-weight: 700;">
-                        Submit Application
-                    </button>
-                </div>
+ <form class="form-grid" action="mailto:retreat@cheviotglamping.co.uk" method="POST" enctype="text/plain">
+        <div>
+          <label for="fname">Full Name</label>
+          <input type="text" id="fname" name="Full Name" required placeholder="E.g., Jane Smith">
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="Email Address" required placeholder="you@example.com">
+        </div>
+        <div class="form-group-full">
+          <label for="cv">Current CV Link (PDF or Document)</label>
+          <input type="url" id="cv" name="CV Link" required placeholder="https://link-to-your-cv.com">
+        </div>
+        <div class="form-group-full">
+          <label for="portfolio">Portfolio Link (Up to 10 Examples)</label>
+          <input type="url" id="portfolio" name="Portfolio Link" required placeholder="https://your-portfolio-website.com">
+        </div>
+        <div class="form-group-full">
+          <label for="proposal">Creative Proposal & Goals (February Session)</label>
+          <textarea id="proposal" name="Creative Proposal" placeholder="Outline your proposed plans and creative goals for the February residency..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+      </form>
             </form>
         </section>
     </main>
