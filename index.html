@@ -416,6 +416,63 @@
             font-size: 1.05rem;
         }
 
+        /* Pricing Card Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 720px;
+            margin: 0 auto 2rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 1.75rem;
+        }
+
+        .pricing-card h4 {
+            color: var(--brand-ochre);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--border-subtle);
+        }
+
+        .pricing-item span {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .pricing-note {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            background: rgba(200, 138, 76, 0.1);
+            border: 1px solid rgba(200, 138, 76, 0.3);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .pricing-note i {
+            color: var(--brand-ochre);
+            flex-shrink: 0;
+        }
+
         .email-info-card {
             max-width: 720px;
             margin: 0 auto;
@@ -507,7 +564,7 @@
         }
 
         @media (max-width: 640px) {
-            .studio-cards-grid { grid-template-columns: 1fr; }
+            .studio-cards-grid, .pricing-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
             .email-info-card { padding: 1.5rem; }
         }
@@ -585,7 +642,7 @@
     <main class="container">
         <div id="about" class="section-header">
             <span>Our Ethos</span>
-            <h2>Rooted in Craftsmanship & Landscape</h2>
+            Baseline Rooted in Craftsmanship & Landscape
             <p>Surrounded by woodland and rolling hills, it blends a rustic, community-focused atmosphere with a deep connection to the regional landscape.</p>
         </div>
 
@@ -688,8 +745,35 @@
     <main class="container">
         <section id="apply" class="apply-section">
             <h2>Apply For February Residency</h2>
-            <p class="subheader-p">We are accepting direct email submissions for our upcoming residency session. Please assemble the required details below and send your application directly to our team.</p>
-            
+            <p class="subheader-p">We are accepting direct email submissions for our upcoming residency session. Review our rates and application guidelines below to get in touch.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4><i data-lucide="user" style="width: 18px; height: 18px;"></i> Single Sleeper</h4>
+                    <div class="pricing-item">
+                        1 Week: <span>£200</span>
+                    </div>
+                    <div class="pricing-item">
+                        1 Month: <span>£650</span>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <h4><i data-lucide="users" style="width: 18px; height: 18px;"></i> Pod (Allows Couples)</h4>
+                    <div class="pricing-item">
+                        1 Week: <span>£400</span>
+                    </div>
+                    <div class="pricing-item">
+                        1 Month: <span>£1,400</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <i data-lucide="heart" style="width: 18px; height: 18px;"></i>
+                <span>We are family friendly! Please enquire directly for additional options and family accommodations.</span>
+            </div>
+
             <div class="email-info-card">
                 <h3>Application Checklist</h3>
                 <ul class="requirements-list">
