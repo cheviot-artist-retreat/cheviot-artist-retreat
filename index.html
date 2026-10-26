@@ -156,6 +156,16 @@
             transform: translateY(-1px);
         }
 
+        .btn-ochre {
+            background: var(--brand-ochre);
+            color: #ffffff;
+        }
+
+        .btn-ochre:hover {
+            background: #b57a3e;
+            transform: translateY(-1px);
+        }
+
         .btn-outline {
             background: transparent;
             border-color: var(--brand-pine);
@@ -382,11 +392,11 @@
             padding-top: 1rem;
         }
 
-        /* Application Form Design */
+        /* Application Section Design */
         .apply-section {
             background: var(--bg-dark);
             color: var(--text-light);
-            padding: 6rem 0;
+            padding: 5rem 2rem;
             border-radius: 8px;
             margin-bottom: 6rem;
         }
@@ -401,53 +411,56 @@
         .apply-section .subheader-p {
             text-align: center;
             color: var(--border-subtle);
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 3rem;
+            font-size: 1.05rem;
         }
 
-        .form-grid {
-            max-width: 760px;
+        .email-info-card {
+            max-width: 720px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            padding: 2.5rem;
         }
 
-        .form-group-full {
-            grid-column: span 2;
+        .email-info-card h3 {
+            color: var(--brand-ochre);
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
         }
 
-        .form-grid label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--accent-soft);
+        .requirements-list {
+            list-style: none;
+            margin-bottom: 2rem;
         }
 
-        .form-grid input, .form-grid textarea, .form-grid select {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            font-family: var(--font-body);
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: all 0.25s ease;
+        .requirements-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.85rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
-        .form-grid input:focus, .form-grid textarea:focus, .form-grid select:focus {
-            outline: none;
-            border-color: var(--brand-ochre);
-            background: rgba(255, 255, 255, 0.12);
+        .requirements-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--brand-ochre);
         }
 
-        .form-grid option {
-            background: var(--bg-dark);
-            color: #ffffff;
+        .email-action-box {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .email-action-box p {
+            margin-bottom: 1rem;
+            color: var(--border-subtle);
+            font-size: 0.9rem;
         }
 
         /* Location Section Styles */
@@ -494,9 +507,9 @@
         }
 
         @media (max-width: 640px) {
-            .studio-cards-grid, .form-grid { grid-template-columns: 1fr; }
-            .form-group-full { grid-column: span 1; }
+            .studio-cards-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
+            .email-info-card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -518,7 +531,7 @@
                     <li><a href="#about">The Retreat</a></li>
                     <li><a href="#studios">Facilities</a></li>
                     <li><a href="#location">Location</a></li>
-                    <li><a href="#apply" class="btn btn-primary">Apply Now</a></li>
+                    <li><a href="#apply" class="btn btn-primary">How to Apply</a></li>
                 </ul>
             </nav>
         </div>
@@ -533,13 +546,13 @@
                 <h1>Space to Gather, Room to Respond</h1>
                 <p>Nestled in the countryside on the Ford & Etal Estate, Cheviot Glamping and its sibling craft microbrewery, Cheviot Brewery (anchored by the onsite Cheviot Tap bar), form a unique rural destination rooted in local craftsmanship.</p>
                 <div class="hero-actions">
-                    <a href="#apply" class="btn btn-primary">Apply for February</a>
+                    <a href="#apply" class="btn btn-primary">Apply via Email</a>
                     <a href="#about" class="btn btn-outline">Explore Ethos</a>
                 </div>
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="inside.jpg.webp" alt="Cheviot Artist Retreat Workspace">
+                <img src="inside.jpg.webp" alt="Cheviot Artist Retreat Workspace Inside">
                 <div class="hero-image-badge">
                     <span>Cheviot Tap & Estate Surroundings</span>
                     <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
@@ -598,7 +611,7 @@
             <div class="studio-cards-grid">
                 <div class="studio-card">
                     <div class="studio-card-img-box">
-                        <img src="inside.jpg.webp" alt="Dedicated custom studio units">
+                        <img src="inside.jpg.webp" alt="Dedicated custom studio units workspace">
                     </div>
                     <div class="studio-card-body">
                         <h4>Custom Studio Units</h4>
@@ -624,7 +637,7 @@
 
                 <div class="studio-card">
                     <div class="studio-card-img-box">
-                        <img src="No1OldDogHouse.jpg.webp" alt="Cheviot Tap and Brewery community hub">
+                        <img src="No1OldDogHouse.jpg.webp" alt="Cheviot Tap and Brewery community hub building">
                     </div>
                     <div class="studio-card-body">
                         <h4>Cheviot Tap & Brewery Hub</h4>
@@ -675,31 +688,36 @@
     <main class="container">
         <section id="apply" class="apply-section">
             <h2>Apply For February Residency</h2>
-            <p class="subheader-p">Please submit a current CV, up to 10 examples of recent work, and a brief statement outlining your proposed plans and creative goals for the February residency.</p>
+            <p class="subheader-p">We are accepting direct email submissions for our upcoming residency session. Please assemble the required details below and send your application directly to our team.</p>
             
-            <form class="form-grid" action="mailto:retreat@cheviotglamping.co.uk" method="POST" enctype="text/plain">
-                <div>
-                    <label for="fname">Full Name</label>
-                    <input type="text" id="fname" name="Full Name" required placeholder="E.g., Jane Smith">
+            <div class="email-info-card">
+                <h3>Application Checklist</h3>
+                <ul class="requirements-list">
+                    <li>
+                        <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i>
+                        <strong>Full Name & Contact Details:</strong> Your preferred contact information and location.
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i>
+                        <strong>Current CV:</strong> A link to or attached copy of your artistic CV (PDF preferred).
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i>
+                        <strong>Portfolio / Work Examples:</strong> A link to your portfolio website or up to 10 image/video examples of recent work.
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i>
+                        <strong>Creative Proposal & Goals:</strong> A brief statement outlining your proposed plans and goals for the February residency.
+                    </li>
+                </ul>
+
+                <div class="email-action-box">
+                    <p>Please email all documents and information to:</p>
+                    <a href="mailto:retreat@cheviotglamping.co.uk?subject=February%20Residency%20Application" class="btn btn-ochre">
+                        <i data-lucide="mail" style="width: 18px; height: 18px;"></i> Email Application to retreat@cheviotglamping.co.uk
+                    </a>
                 </div>
-                <div>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="Email Address" required placeholder="you@example.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="cv">Current CV Link (PDF or Document)</label>
-                    <input type="url" id="cv" name="CV Link" required placeholder="https://link-to-your-cv.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="portfolio">Portfolio Link (Up to 10 Examples)</label>
-                    <input type="url" id="portfolio" name="Portfolio Link" required placeholder="https://your-portfolio-website.com">
-                </div>
-                <div class="form-group-full">
-                    <label for="proposal">Creative Proposal & Goals (February Session)</label>
-                    <textarea id="proposal" name="Creative Proposal" placeholder="Outline your proposed plans and creative goals for the February residency..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Application</button>
-            </form>
+            </div>
         </section>
     </main>
 
